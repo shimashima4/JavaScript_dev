@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample</title>
+</head>
+
+<body>
+    <h1 id="heading">練習の見出し</h1>
+    <p id="elem">ホバーまたはクリックで切り替え</p>
+    <img id="image" src="https://picsum.photos/200/300?image=0">
+
+    <script>
+        const image=document.getElementById('image');
+        const src=image.getAttribute('src');
+        const src2= 'https://picsum.photos/200/300?image=100';
+        console.log(src);
+
+        let count=0;
+
+        const imageChange= ()=>{
+            if (count % 2 == 0) {
+                image.setAttribute('src', src2);
+            } else {
+                image.setAttribute('src',src);
+            }
+            count = (count % 2) + 1;
+        };
+
+        image.addEventListener('mouseover', ()=>{
+            imageChange();
+        });
+        image.addEventListener('mouseout', () => {
+            imageChange();
+        });
+
+        image.onclick=()=>{
+            imageChange();
+        };
+
+    </script>
+
+        <!-- const elem=document.getElementById('elem');
+        const elems=elem.style;
+        const big=document.getElementById('heading');
+        const bigs=big.style;
+        console.log(elems);
+
+        elems.color="red";
+        elems.paddingLeft="30px";
+        elems.fontSize="20px";
+
+        bigs.color="black";
+        bigs.textAlign="center";
+        bigs.fontSize="40px";
+
+        elem.addEventListener('mouseover', ()=>{
+            elems.color="blue";
+            elems.fontSize="26px";
+            bigs.fontSize="50px";
+            elems.cursor="pointer";
+        });
+        elem.addEventListener('mouseout',()=>{
+            elems.color="red";
+            elems.fontSize="20px";
+            bigs.fontSize = "40px";
+        }) -->
+
+</body>
+
+</html>
