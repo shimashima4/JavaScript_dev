@@ -19,20 +19,20 @@
         let timer,num,count=0 , comment="",bad="おしい〜",math,term=100;
         const counter=()=>{
             count+=1;
-            time.innerHTML=count;
+            time.textContent=count;
         }
         start.onclick=()=>{
-            para.innerHTML="";
+            para.textContent="";
             clearInterval(timer);
             timer=setInterval(counter,50);
         }
         stoped.onclick=()=>{
             clearInterval(timer);
             if(count==term){
-                para.innerHTML="素晴らしい...くれてやろう☺️三💐";
+                para.textContent="素晴らしい...くれてやろう☺️三💐";
             }else if(count<=term+2 && count>=term-2){
                 math=(count-term);
-                para.innerHTML = math < 0 ? comment = `${bad + math * -1}早かったね` : comment = `${bad + math}遅かったね`;
+                para.textContent = math < 0 ? comment = `${bad + math * -1}早かったね` : comment = `${bad + math}遅かったね`;
             }
             count=0;
         }
