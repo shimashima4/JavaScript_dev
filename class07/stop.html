@@ -1,0 +1,41 @@
+<!-- 条件式を省力系にし、あと何秒などの表記を追加した -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    <h2 id="time">0</h2>
+    <p id="para"></p>
+    <script>
+        const start=document.querySelector("#start");
+        const stoped=document.querySelector("#stop");
+        const time=document.querySelector("#time");
+        const para=document.querySelector("#para")
+        let timer,num,count=0 , comment="",bad="おしい〜",math,term=100;
+        const counter=()=>{
+            count+=1;
+            time.innerHTML=count;
+        }
+        start.onclick=()=>{
+            para.innerHTML="";
+            clearInterval(timer);
+            timer=setInterval(counter,50);
+        }
+        stoped.onclick=()=>{
+            clearInterval(timer);
+            if(count==term){
+                para.innerHTML="素晴らしい...くれてやろう☺️三💐";
+            }else if(count<=term+2 && count>=term-2){
+                math=(count-term);
+                para.innerHTML = math < 0 ? comment = `${bad + math * -1}早かったね` : comment = `${bad + math}遅かったね`;
+            }
+            count=0;
+        }
+    </script>
+</body>
+</html>

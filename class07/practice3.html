@@ -1,0 +1,31 @@
+<!-- 条件演算子？を使用し止めたり始めたりできるようにした -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice3</title>
+</head>
+<body>
+    <h1>aaaaa</h1>
+<script>
+    // const colors=["red","blue","green"];
+    const body=document.querySelector("body");
+    const html=document.querySelector("html");
+    let count=0 ,timer;
+
+    const reset=()=>{
+        body.style.backgroundColor=`rgb(${Math.floor(Math.random()*256)},${Math.floor(Math.random() * 256) },${Math.floor(Math.random() * 256) })`;
+    };
+
+    // setInterval(reset, 1000);
+    timer = setInterval(reset,1000);
+
+    html.onclick=()=>{
+        count=(count+1)%2;
+        // console.log(count);
+        count==1 ? clearInterval(timer) : timer = setInterval(reset,1000);
+    }
+</script>
+</body>
+</html>

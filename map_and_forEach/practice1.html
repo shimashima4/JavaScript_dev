@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const items = [1, 2, 3, 4, 5];
+
+    // mapは新たな配列型として返してくれる
+    // 処理が1行で済むなら{}省略ができる
+    const result = items.map((value)=> value * 2);
+    console.log(result);
+
+    // forEachは返り値を一つ一つ返す
+    items.forEach(value=> console.log(value));
+
+    // 配列に格納する＝map
+    // 配列の値を一つずつ返す＝forEach
+
+    </script>
+</body>
+</html>

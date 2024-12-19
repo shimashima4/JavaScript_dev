@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const items = [1, 2, 3, 4, 5];
+        // forEachは返り値を一つ一つ返す
+        items.forEach(value => console.log(value));
+
+        // forEachでオブジェクトを返す
+        const data=[
+            { name: "赤色", code: "#FF0000", feel: "情熱" },
+            { name: "青色", code: "#0000FF", feel: "冷静" },
+            { name: "黄色", code: "#FFFF00", feel: "注意" }
+        ]
+
+        data.forEach(value=> console.log(value.name,value.code));
+
+        // JSON形式を取得します
+        let json = {
+                "name": "tanaka",
+                "age": "5",
+                "birth": "10/01"
+            }
+
+        console.log(json);
+
+        let obj =JSON.parse(json);
+
+    </script>
+</body>
+
+</html>
